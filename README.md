@@ -1,4 +1,4 @@
-# JKFLIPFLOP-USING-IF-ELSE
+![image](https://github.com/priyadharshini210/JKFLIPFLOP-USING-IF-ELSE/assets/148514638/8c4b1bd8-4181-4244-9ecf-9e35ecbd707f)# JKFLIPFLOP-USING-IF-ELSE
 
 **AIM:** 
 
@@ -38,11 +38,49 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: Priyadharshini.P RegisterNumber: 212223240128
 */
+```
+module JK(q, qb,j,k,clock,reset);
+    input j,k,clock,reset;
+    output reg q, qb;
+	 
+always @ (posedge (clock))
 
+    begin 
+        if (!reset)
+            begin
+               q <= q;
+               qb <=qb;
+            end   
+        
+else
+	begin
+		if(j==0&&k==0)
+			begin
+			q<=q;
+			qb<=qb;
+			end
+		else if(j!=k)
+			begin
+			q<=j;
+			qb<=k;
+			end
+		else if(j==1&&k==1)
+			begin
+			q<=~q;
+			qb<=~qb;
+			end
+	end
+end
+            
+endmodule
+```
 **RTL LOGIC FOR FLIPFLOPS**
+![WhatsApp Image 2024-05-07 at 08 35 02_53d77093](https://github.com/priyadharshini210/JKFLIPFLOP-USING-IF-ELSE/assets/148514638/cfdf35bb-f0ad-4ee4-962f-ef1f89e851f0)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![image](https://github.com/priyadharshini210/JKFLIPFLOP-USING-IF-ELSE/assets/148514638/c72bfe49-5b3b-45bc-a0a2-6230729d8d3f)
 
 **RESULTS**
+The output of JKFLIPFLOP-USING-IF-ELSE has been executed.
